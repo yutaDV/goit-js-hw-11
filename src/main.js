@@ -42,6 +42,7 @@ form.addEventListener('submit', async (event) => {
       iziToast.warning({ title: 'No Results', message: 'Sorry, there are no images matching your search query. Please try again!' });
     } else {
       renderImages(data.hits, lightbox);
+      searchInput.value = '';
     }
   } catch (error) {
     iziToast.error({ title: 'Error', message: 'An error occurred while fetching images.' });

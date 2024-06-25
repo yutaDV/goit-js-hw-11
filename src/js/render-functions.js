@@ -9,7 +9,8 @@ export function renderImages(images, lightbox) {
 
 function createImageCard(image) {
   return `
-    <a href="${image.largeImageURL}" class="gallery-item">
+  <div class="gallery-item-container">  
+  <a href="${image.largeImageURL}" class="gallery-item">
       <img src="${image.webformatURL}" alt="${image.tags}" title="${image.tags}" loading="lazy" />
       <div class="info">
         <p><span>Likes:</span> ${image.likes}</p>
@@ -18,6 +19,7 @@ function createImageCard(image) {
         <p><span>Downloads:</span> ${image.downloads}</p>
       </div>
     </a>
+  </div>
   `;
 }
 
