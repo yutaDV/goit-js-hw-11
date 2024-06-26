@@ -3,9 +3,16 @@
 
 export function renderImages(images, lightbox) {
   const gallery = document.getElementById('gallery');
-  gallery.innerHTML = images.map(image => createImageCard(image)).join('');
+  
+  // Створення проміжної змінної для зберігання розмітки
+  let markup = images.map(image => createImageCard(image)).join('');
+
+  // Додавання розмітки до галереї
+  gallery.innerHTML = markup;
+
   lightbox.refresh();
 }
+
 
 function createImageCard(image) {
   return `
